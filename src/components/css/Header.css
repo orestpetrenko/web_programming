@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+.logo {
+    height: 50px; /* Controls the logo image height */
+    margin-right: 20px; /* Adds spacing between logo and title */
+}
+
+h1 {
+    font-size: 18px;
+    margin: 0;
+    color: white;
+}

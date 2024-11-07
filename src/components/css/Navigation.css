@@ -1,0 +1,18 @@
+.navigation {
+    display: flex;
+    gap: 15px;
+}
+
+.navigation button {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.navigation button:hover {
+    background-color: #ddd;
+}
