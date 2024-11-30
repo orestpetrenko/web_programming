@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Inventory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Car Inventory</h1>
+
+        <!-- Tab Navigation -->
+        <div class="tabs">
+            <button onclick="showTab('my-cars')">My Cars</button>
+            <button onclick="showTab('add-car')">Add Car</button>
+            <button id="edit-tab" onclick="showTab('edit-car')" style="display:none;">Edit Car</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="my-cars" class="tab-content">
+            <h2>My Cars</h2>
+            <!-- Search functionality -->
+            <input type="text" id="search-input" placeholder="Search cars by make or model">
+            <button onclick="searchCars()">Search</button>
+
+            <!-- Buttons for operations -->
+            <div class="buttons">
+                <button onclick="sortByPrice()">Sort by Price</button>
+                <button onclick="sortByYear()">Sort by Year</button>
+                <button onclick="calculateTotalPrice()">Calculate Total Price</button>
+            </div>
+
+            <!-- Car list display -->
+            <div id="cars-list"></div>
+        </div>
+
+        <!-- Add Car Form -->
+        <div id="add-car" class="tab-content" style="display:none;">
+            <h2>Add a New Car</h2>
+            <form id="create-car-form" onsubmit="return createCar()">
+                <label for="make">Make:</label>
+                <input type="text" id="make" name="make" required><br><br>
+
+                <label for="model">Model:</label>
+                <input type="text" id="model" name="model" required><br><br>
+
+                <label for="year">Year:</label>
+                <input type="number" id="year" name="year" min="1886" max="2024" required><br><br>
+
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" min="1" required><br><br>
+
+                <label for="color">Color:</label>
+                <input type="text" id="color" name="color" required><br><br>
+
+                <label for="mileage">Mileage:</label>
+                <input type="number" id="mileage" name="mileage" min="0" required><br><br>
+
+                <button type="submit">Add Car</button>
+            </form>
+        </div>
+
+        <!-- Edit Car Form -->
+        <div id="edit-car" class="tab-content" style="display:none;">
+            <h2>Edit Car</h2>
+            <form id="edit-car-form" onsubmit="return saveCar()">
+                <label for="edit-make">Make:</label>
+                <input type="text" id="edit-make" name="make" required><br><br>
+
+                <label for="edit-model">Model:</label>
+                <input type="text" id="edit-model" name="model" required><br><br>
+
+                <label for="edit-year">Year:</label>
+                <input type="number" id="edit-year" name="year" min="1886" max="2024" required><br><br>
+
+                <label for="edit-price">Price:</label>
+                <input type="number" id="edit-price" name="price" min="1" required><br><br>
+
+                <label for="edit-color">Color:</label>
+                <input type="text" id="edit-color" name="color" required><br><br>
+
+                <label for="edit-mileage">Mileage:</label>
+                <input type="number" id="edit-mileage" name="mileage" min="0" required><br><br>
+
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
