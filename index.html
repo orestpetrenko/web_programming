@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Inventory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Car Inventory</h1>
+
+        <!-- Search functionality -->
+        <input type="text" id="search-input" placeholder="Search cars by make or model">
+        <button onclick="searchCars()">Search</button>
+
+        <!-- Buttons for operations -->
+        <div class="buttons">
+            <button onclick="sortByPrice()">Sort by Price</button>
+            <button onclick="sortByYear()">Sort by Year</button>
+            <button onclick="calculateTotalPrice()">Calculate Total Price</button>
+        </div>
+
+        <!-- Car list display -->
+        <div id="cars-list"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
