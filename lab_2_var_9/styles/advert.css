@@ -1,0 +1,78 @@
+.advert {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    background: #F063B826;
+    border-radius: 50px;
+    margin: 50px 125px;
+}
+
+
+.advert__image {
+    width: 50%;
+    object-fit: contain;
+    object-position: center center;
+}
+
+.advert__content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 25px 25px 0;
+}
+
+.advert__headline {
+    font-family: "Arimo", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 52px;
+    text-align: left;
+    color: #212353;
+}
+
+.advert__text {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28.8px;
+    text-align: left;
+}
+
+@media(max-width:920px) {
+    .advert {
+        margin: 30px 20px;
+        gap: 30px;
+        flex-direction: column;
+    }
+    .advert__image {
+        height: 100%;
+    }
+    .advert__content {
+        padding-top: 0;
+        width: 80%;
+    }
+}
+
+@media(max-width:440px) {
+    .advert__headline {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+    .advert__text {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+    .advert__content {
+        gap: 15px;
+    }
+    .advert__image {
+        width: 100%;
+    }
+}
+@media(max-width:360px) {
+    .advert__headline {
+        font-size: 25px;
+    }
+}
