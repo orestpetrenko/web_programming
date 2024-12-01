@@ -1,26 +1,21 @@
-
-import Catalog from "elements/layout/Main/Catalog/Catalog";
-import Footer from "./elements/layout/Footer/Footer";
-import Main from "./elements/layout/Main/Home/Home";
-import Navigation from "./elements/layout/Navigation/Navigation";
-
-import { BrowserRouter as Router, Route, RouterProvider, Routes, } from 'react-router-dom';
-
-import './App.scss';
-import DataContext from "data/Context";
-
-import { value, loadMore } from "./data/dataReceive";
-import routesMap from "elements/routes/Routes";
-
+import React from "react";
+import Home from "./components/home";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import CatalogPage from "./components/catalog_page";
+import ItemPage from "./components/item_page";
+import CartPage from "./components/cart_page";
 
 function App() {
-    return (<div>
-
-        <DataContext.Provider value={{ value: value, loadMore }}>
-            <RouterProvider router={routesMap()} />
-        </DataContext.Provider>
-    </div>
-    );
+    return(
+    <BrowserRouter>
+    <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/catalog" element={<CatalogPage />}/>
+        <Route path="/cars/:id" element={<ItemPage />}/>
+        <Route path="/cart" element={<CartPage />}/>
+    </Routes>
+    </BrowserRouter>
+    )
 }
 
 export default App;
